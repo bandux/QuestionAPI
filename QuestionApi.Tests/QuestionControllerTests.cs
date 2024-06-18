@@ -111,7 +111,7 @@ namespace QuestionApi.Tests
             // Arrange
             var applicationData = new ApplicationData
             {
-                CandidateId = "12345",
+                ApplicantId = "12345",
                 Responses = new List<QuestionResponse>
                 {
                     new QuestionResponse { QuestionId = "q1", Response = "Blue" },

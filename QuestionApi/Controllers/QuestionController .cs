@@ -73,7 +73,17 @@ namespace QuestionApi.Controllers
             {
                 return BadRequest("Invalid application data");
             }
-            return Ok("Application submitted successfully");
+
+            var success = await _questionRepository.SubmitApplicationAsync(applicationData);
+
+            if (success)
+            {
+                return Ok("Application submitted successfully");
+            }
+            else
+            {
+                return StatusCode(500, "Failed to submit application");
+            }
         }
 
     }
